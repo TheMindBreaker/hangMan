@@ -8,16 +8,18 @@ def start():
     w_incorrect = []
     w_used = []
     w_correct = []
-    secret_word = 'Franc'
+    secret_word = readwords.read()
     space_word = list('_'*len(secret_word))
     secret_word = secret_word.upper()
     list_sercret_word = list(secret_word)
     msg = ""
+    game_result = ''
 
     while True:
         if(space_word == list_sercret_word):
+
+            game_result = secret_word
             break
-            return secret_word
         clear()
         print (lives)
         print (mono.mono[lives])
@@ -43,8 +45,9 @@ def start():
                         #Verificar que la letra este en el arreglo de la palabra
                         if(letter == secret_word):
                             #Verificar si la palabra esta completa y correcta
+                            game_result = secret_word
                             break
-                            return secret_word
+
                         else:
                             for i,k in enumerate(space_word):
                                 if(letter == list_sercret_word[i]):
@@ -52,8 +55,9 @@ def start():
                                     w_used.append(letter)
                     else:
                         if (lives==5):
+                            game_result = False
                             break
-                            return False
+
                         else:
                             lives = lives + 1
                             w_used.append(letter)
@@ -63,3 +67,4 @@ def start():
                 msg =("Favor de solo ingresar Letras")
         else:
             msg =("Favor de ingresar por lo menos 1 letra :D")
+    return game_result

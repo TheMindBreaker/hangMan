@@ -14,7 +14,7 @@ while(chose==False):
     T)    h)   HH  e)EEEE    M)      mm i) n)   NN  d)DDDD B)bbbbb  r)       e)EEEE  a)AAAA k)  KK  e)EEEE r)         ## X)    xx    Y)    Z)zzzzzz
     ===================================================================================================================================================
     """)
-    print (msg)
+    print ('Mensaje ==> '+msg)
     print ("""
     WELCOME TO THE BREAKER-STATION  V. 2.0
     =======================================
@@ -32,7 +32,7 @@ while(chose==False):
         import game
         fer = game.start();
         if(fer != False):
-            msg = ("Ganaste esta ronda")
+            msg = ("Ganaste esta ronda y la palabra era ", fer)
         else:
             msg = ("Perdiste la ronda")
         chose ==True
@@ -47,4 +47,4 @@ while(chose==False):
     elif(menu_option=='4' or menu_option=="Salir" or menu_option=="salir" or menu_option=="SALIR"):
         break
     else:
-        print ("La opción elegida no existe, favor de intentar otra")
+        msg = "La opción elegida no existe, favor de intentar otra"
